@@ -1,11 +1,3 @@
-// Project assignment 3 solution; compile with C++11.
-// Source: Beej's Guide to Network Programming examples: listener.c and talker.c
-// DESIGN:
-// uses 2 sockets, one for receiving, used by one thread; one for sending, used by the other thread
-// The sender sends a UDP packet every second. Waiting is performed on a condition variable, so the thread can wake up if the receiver receives something. The sender sends a single byte as payload, taken from the global value field.
-// The receiver changes this global value upon receipt of a packet; it then notifies the sender who will send a new packet using the updated value.
-
-
 #include <iostream>
 #include <thread>
 #include <bitset>
